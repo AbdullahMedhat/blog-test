@@ -1,0 +1,24 @@
+<div class="container">
+	<p id="notice"><%= notice %></p>
+	<div class="panel panel-default">
+    <div class="panel-heading">
+    	<p>
+    	  <strong>Title:</strong>
+    	  <%= @post.title %>
+    	</p>
+    </div>
+    <div class="panel-body">
+    	<p>
+    	  <strong>Content:</strong>
+    	  <%= @post.content %>
+    	</p>
+    </div>
+
+    <div class="panel-footer">
+    	<p>
+			 <strong>Category:</strong>
+			  <%= @post.category.name %>
+			</p>
+		</div>
+  </div>
+</div>

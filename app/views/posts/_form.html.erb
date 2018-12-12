@@ -1,0 +1,31 @@
+<%= form_with(model: post, local: true) do |form| %>
+  <div class="container">
+    <% if post.errors.any? %>
+      <div id="error_explanation">
+        <ul>
+        <% post.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="field">
+      <%= form.label :category_id %>
+      <%= form.select :category_id, options_for_select(Category.all.map{ |c| [c.name, c.id] }),{}, { class: 'form-control' }%>
+    </div>
+
+    <div class="field">
+      <%= form.label :title %>
+      <%= form.text_field :title, class: 'form-control'%>
+    </div>
+
+    <div class="field">
+      <%= form.label :content %>
+      <%= form.text_area :content,rows: "8", class: 'form-control'%>
+    </div>
+
+    <div class="actions pull-right">
+      <%= form.submit  class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BlogApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    <header class="clear-fix">
+      <nav>
+        <ul>
+          <li><%= link_to 'Home', root_path %></li>
+          <li><%= link_to 'New Post', new_post_path %></li>
+          <li><%= link_to 'Categories', categories_path %></li>
+          <li><%= link_to 'New Category', new_category_path %></li>
+        </ul>
+      </nav>
+    </header>
+    <%= yield %>
+  </body>
+</html>

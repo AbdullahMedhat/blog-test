@@ -1,0 +1,21 @@
+<%= form_with(model: category, local: true) do |form| %>
+  <div class="container">
+    <% if category.errors.any? %>
+      <div id="error_explanation">
+        <ul>
+        <% category.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="field">
+      <%= form.label :name %>
+      <%= form.text_field :name, class: 'form-control'%>
+    </div>
+
+    <div class="actions pull-right">
+      <%= form.submit  class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>
