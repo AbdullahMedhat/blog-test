@@ -15,17 +15,17 @@ class CategoriesController < ApplicationController
     @category = Category.new(category_params)
 
     if @category.save
-      redirect_to categories_url, notice: 'Category was successfully created.'
+      redirect_to categories_url, notice: 'Category was successfully created.', status: :created
     else
-      render :new
+      render :new, status: :bad_request
     end
   end
 
   def update
     if @category.update(category_params)
-      redirect_to categories_url, notice: 'Category was successfully updated.'
+      redirect_to categories_url, notice: 'Category was successfully updated.', status: :ok
     else
-      render :edit
+      render :edit, status: :bad_request
     end
   end
 

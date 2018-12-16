@@ -17,17 +17,17 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      redirect_to @post, notice: 'Post was successfully created.'
+      redirect_to @post, notice: 'Post was successfully created.', status: :created
     else
-      render :new
+      render :new, status: :bad_request
     end
   end
 
   def update
     if @post.update(post_params)
-      redirect_to @post, notice: 'Post was successfully updated.'
+      redirect_to @post, notice: 'Post was successfully updated.', status: :ok
     else
-      render :edit
+      render :edit, status: :bad_request
     end
   end
 

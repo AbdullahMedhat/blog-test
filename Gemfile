@@ -44,6 +44,16 @@ gem 'will_paginate', '~> 3.0'
 
 
 group :development, :test do
+  # rspec gems
+    gem 'database_cleaner', '~> 1.6.2'
+    gem 'factory_bot_rails', '~> 4.0'
+    gem 'faker', '~> 1.8.4'
+    gem 'rspec-rails', '~> 3.7.1'
+    gem 'guard-rspec', '~> 4.7.3'
+    gem 'rspec-retry', '~> 0.5.6'
+    gem 'spring-commands-rspec', '~> 1.0.4'
+    gem 'rails-controller-testing'
+
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
